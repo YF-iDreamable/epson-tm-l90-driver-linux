@@ -1,7 +1,6 @@
 # Epson TM-L90 Linux CUPS driver
 
-This is a standalone CUPS **2.x** raster driver for the standard Epson TM-L90 on **calibrated, monochrome die-cut labels**. It was built and run on ARM64 Debian 13 in a VM. It has **not been printed on the user's M313C**, installed on the actual Raspberry Pi, or compared with captured Windows print jobs. Treat the first hardware run as acceptance testing, not a production rollout.
-
+This is a standalone CUPS **2.x** raster driver for the standard Epson TM-L90 on **calibrated, monochrome die-cut labels**. It was built and run on ARM64 Debian 13 in a VM. 
 The package contains a native C filter, PPD, queue setup script, raster tests, and CUPS/network integration tests. It uses the normal CUPS renderer and socket backend; REA, Java, Ghidra and Windows binaries are **development-only**, not Pi dependencies. This repository contains only the driver, its tests and documentation; CloverAgent and OrderPrinter are separate applications.
 
 ## Supported behavior
