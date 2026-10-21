@@ -1,0 +1,13 @@
+/build/
+__pycache__/
+*.pyc
+/vendor/
+/scratch/
+/analysis/
+*.exe
+*.dll
+*.zip
+*.ras
+*.prn
+*.log
+.DS_Store
