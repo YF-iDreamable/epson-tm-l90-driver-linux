@@ -2,7 +2,9 @@
 
 ## Standalone extraction check — 2026-10-21
 
-The standalone repository was built from source on macOS arm64 with the system CUPS library. `make test` passed all 12 test methods. The source, PPD, queue script and tests are unchanged from the original package; README links now resolve inside this repository. The included GitHub Actions workflow is configured to run the Linux build, PPD validation and renderer/socket integration tests on Ubuntu 24.04. Hardware acceptance below remains outstanding.
+The standalone repository was built from source on macOS arm64 with the system CUPS library. `make test` passed all 13 test methods after the portability change below. The driver C source, PPD and queue script are unchanged from the original package; README links now resolve inside this repository. The included GitHub Actions workflow is configured to run the Linux build, PPD validation and renderer/socket integration tests on Ubuntu 24.04. Hardware acceptance below remains outstanding.
+
+Ubuntu CI exposed stricter CUPS raster header validation: padded row lengths are rejected before the fixture writer emits pixels. Canonical raster cases now always run across all widths, polarities and compression modes. A separate padded-row test runs where the installed CUPS library supports padding and explicitly skips only when its writer reports a row-length/width mismatch. Fixture failures retain the CUPS diagnostic; other errors still fail the suite. See [CUPS row-length validation](https://github.com/OpenPrinting/cups/blob/master/cups/raster-stream.c).
 
 ## Executed 2026-10-14
 
@@ -22,7 +24,7 @@ Raw test/analysis logs were retained under `/private/tmp/tml90-analysis`, outsid
 `make test` checks:
 
 1. Independent decode of encoded pixel content at widths 1, 7, 8, 9, 351, 352, 575 and 576 dots; 259-row images cross two band boundaries. It compares every pixel, not just byte counts.
-2. 1-/8-bit K/W/SW polarity, compressed and uncompressed CUPS raster, padded source strides and deliberately dirty trailing bits.
+2. 1-/8-bit K/W/SW polarity, compressed and uncompressed CUPS raster, padded source strides where the installed CUPS library supports them, and deliberately dirty trailing bits.
 3. Three-page output including a completely blank middle page; preserved image heights and page order; None/Page/Job cut sequencing and immediate post-cut feed.
 4. Copies ownership: already expanded raster is never multiplied by the filter's `argv[4]`; unsupported raster copy counts fail explicitly. Actual copy expansion is separately tested through CUPS.
 5. File versus stdin equivalence; invalid options, copies, resolution, colorspace, bit depth, dimensions, duplex and missing PPD.
