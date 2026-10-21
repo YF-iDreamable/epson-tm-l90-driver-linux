@@ -1,0 +1,189 @@
+{
+  "date": "2026-10-14",
+  "rea_version": "6.5.0",
+  "ghidra_version": "12.1.4",
+  "scratch_directory": "/private/tmp/tml90-analysis",
+  "note": "Manifest only; vendor binaries, resource payloads, raw decompilation, and analysis scratch are intentionally not redistributed. Static analysis does not establish runtime branch selection or physical printing.",
+  "evidence": [
+    {
+      "file": "apd-artifact.json",
+      "sha256": "859c9fe24e9cea702b0307342da876f856e975c04d859b139f74930711a00f66",
+      "evidence_id": "ev_ba681aaf55aa6a0e312e51a41a1c6748b69fd20febc05562afed16b166802995",
+      "operation": "inspect_artifact",
+      "subject_sha256": "61fa88b36a493be38a34fcb98f4265f1754d4eb4b1f55ff138efa8bab4779c1a",
+      "provider": {
+        "id": "rea-artifact-graph",
+        "name": "REA safe artifact graph provider",
+        "version": "1"
+      }
+    },
+    {
+      "file": "apd455-artifact.json",
+      "sha256": "f467b7b5764e27aec6c72a6028511e74e6e734e5cc0f578142e2e532a50d278b",
+      "evidence_id": "ev_e058d6d5a6e7d9837899fd600aa20b13856c53466024c8b1189d42faa574f085",
+      "operation": "inspect_artifact",
+      "subject_sha256": "be28b017ede2ca32a36fed02e30dd034bebe66d41964bab98d3f4f4e9a5ad139",
+      "provider": {
+        "id": "rea-artifact-graph",
+        "name": "REA safe artifact graph provider",
+        "version": "1"
+      }
+    },
+    {
+      "file": "l90-resources.json",
+      "sha256": "c92c58eee79e9547ad4d578f4ba3eb643cf8d17a2d9e68232509a1c2b3755c0d",
+      "evidence_id": "ev_83591797f59a3fbbfe7bbdb83f38d638837a27706673dc1be72be43c5b5e500d",
+      "operation": "inspect_pe_resources",
+      "subject_sha256": "70148034ecc38dd255c67168d4e312337e15e1123019fd8740ce93cbad589adb",
+      "provider": {
+        "id": "rea-pe-resources",
+        "name": "REA PE resource parser",
+        "version": "1"
+      }
+    },
+    {
+      "file": "output-artifact.json",
+      "sha256": "658ba26cc7a8d2b17a0992f9a5fc0498ac4a41abb5f068d168d2a8bbae4710ce",
+      "evidence_id": "ev_f8977621d11129ba8b01fabe08beeddc4b9ab6633cb7f234c83dee056ad42ca1",
+      "operation": "inspect_artifact",
+      "subject_sha256": "9094dc9f1413c4d59ac4b7441f31f2ae9115c9731be8e0eed2a79b1812b17b72",
+      "provider": {
+        "id": "rea-artifact-graph",
+        "name": "REA safe artifact graph provider",
+        "version": "1"
+      }
+    },
+    {
+      "file": "nextpage.json",
+      "sha256": "d5d9889414c5b816eb0812daec4289cbef8843790518b83cd19b58f4f2d6dc01",
+      "evidence_id": "ev_4a1ab2db648d527b3c7eff2ed51f9250fb99284cf3a601f7f6ef5937fc559296",
+      "operation": "procedure_pseudo_code",
+      "subject_sha256": "9094dc9f1413c4d59ac4b7441f31f2ae9115c9731be8e0eed2a79b1812b17b72",
+      "provider": {
+        "id": "ghidra",
+        "name": "Ghidra",
+        "version": "12.1.4"
+      }
+    },
+    {
+      "file": "page-end.json",
+      "sha256": "0df574da849f4a47481266c7375d631fb475edc225b7ef1a71c1af428665bb8f",
+      "evidence_id": "ev_97a0d97a712c3b721360fcbfb816fce25bc4914746a4e0fbee45c4754f784d67",
+      "operation": "procedure_pseudo_code",
+      "subject_sha256": "9094dc9f1413c4d59ac4b7441f31f2ae9115c9731be8e0eed2a79b1812b17b72",
+      "provider": {
+        "id": "ghidra",
+        "name": "Ghidra",
+        "version": "12.1.4"
+      }
+    },
+    {
+      "file": "bandout.json",
+      "sha256": "afc39080860167188fcf143805e366a95c6abedc6b2db663363b061b6ceea7c3",
+      "evidence_id": "ev_4dfa7b73f28bd7f7ff8eeb1cb51cb4a03037a2370078f8afc3162aa88b83bb32",
+      "operation": "procedure_pseudo_code",
+      "subject_sha256": "9094dc9f1413c4d59ac4b7441f31f2ae9115c9731be8e0eed2a79b1812b17b72",
+      "provider": {
+        "id": "ghidra",
+        "name": "Ghidra",
+        "version": "12.1.4"
+      }
+    },
+    {
+      "file": "raster-dispatch.json",
+      "sha256": "0a8217c82f0af40962de8f0072b3f8af22727f5d54861111b1184486e7dcbaf0",
+      "evidence_id": "ev_9d8036ba3789fe9cafe78be5c5eb27d450020567f2a9e639ef2a9946ece2037e",
+      "operation": "procedure_pseudo_code",
+      "subject_sha256": "9094dc9f1413c4d59ac4b7441f31f2ae9115c9731be8e0eed2a79b1812b17b72",
+      "provider": {
+        "id": "ghidra",
+        "name": "Ghidra",
+        "version": "12.1.4"
+      }
+    },
+    {
+      "file": "finish-page.json",
+      "sha256": "06f89fde38a06495dcb629e4c736defa1c5f50c5abbcbb879620b24046dd8d72",
+      "evidence_id": "ev_d87db17200d029fb11a3ca9921129a2b58a980779dd6e61a4462dfe5117ce4aa",
+      "operation": "procedure_pseudo_code",
+      "subject_sha256": "9094dc9f1413c4d59ac4b7441f31f2ae9115c9731be8e0eed2a79b1812b17b72",
+      "provider": {
+        "id": "ghidra",
+        "name": "Ghidra",
+        "version": "12.1.4"
+      }
+    },
+    {
+      "file": "flush-band.json",
+      "sha256": "318cd651d59f522755def295783df3c8f4ff528736ceb01eed75935bc27209b2",
+      "evidence_id": "ev_450f3c3abe7ddb477f6fb68b7e8efc0895e42510cd131838ac7fa8ed75404d81",
+      "operation": "procedure_pseudo_code",
+      "subject_sha256": "9094dc9f1413c4d59ac4b7441f31f2ae9115c9731be8e0eed2a79b1812b17b72",
+      "provider": {
+        "id": "ghidra",
+        "name": "Ghidra",
+        "version": "12.1.4"
+      }
+    },
+    {
+      "file": "encoder-factory.json",
+      "sha256": "d99d55fb9f09893f7229be71c1f9b8bcd16fb9336d698a1b4850268645e636f2",
+      "evidence_id": "ev_a69530a4ca5c876bda028fa20cec1ccc0bc86b285e0d119088a841c6541e88d8",
+      "operation": "procedure_pseudo_code",
+      "subject_sha256": "9094dc9f1413c4d59ac4b7441f31f2ae9115c9731be8e0eed2a79b1812b17b72",
+      "provider": {
+        "id": "ghidra",
+        "name": "Ghidra",
+        "version": "12.1.4"
+      }
+    },
+    {
+      "file": "encoder-constructor.json",
+      "sha256": "647d710863e45871f5476b3c9190fb9812990b864410753314604b53ead8d51c",
+      "evidence_id": "ev_3404fbf0520e5278478513c8584331ad5099379366c3a8532898bd58941f00ac",
+      "operation": "procedure_pseudo_code",
+      "subject_sha256": "9094dc9f1413c4d59ac4b7441f31f2ae9115c9731be8e0eed2a79b1812b17b72",
+      "provider": {
+        "id": "ghidra",
+        "name": "Ghidra",
+        "version": "12.1.4"
+      }
+    },
+    {
+      "file": "graphics112.json",
+      "sha256": "7527814c68d4c278d33f81ac60e23f3042624760fce0be7ab093564459911e12",
+      "evidence_id": "ev_ec88d563fca5d8d738919af0fd2e9105ab3be14f77237e02f78803902eacacf4",
+      "operation": "procedure_pseudo_code",
+      "subject_sha256": "9094dc9f1413c4d59ac4b7441f31f2ae9115c9731be8e0eed2a79b1812b17b72",
+      "provider": {
+        "id": "ghidra",
+        "name": "Ghidra",
+        "version": "12.1.4"
+      }
+    },
+    {
+      "file": "graphics-emit.json",
+      "sha256": "c1e72dcf41b3f54b0b150884724b1b7c9664f36877aa3bb7bf5524683f9ef620",
+      "evidence_id": "ev_54c5654e66b7ad5341a366ab24c7d52706f249bcb33e97392720cf6c2cbab2f0",
+      "operation": "procedure_pseudo_code",
+      "subject_sha256": "9094dc9f1413c4d59ac4b7441f31f2ae9115c9731be8e0eed2a79b1812b17b72",
+      "provider": {
+        "id": "ghidra",
+        "name": "Ghidra",
+        "version": "12.1.4"
+      }
+    },
+    {
+      "file": "graphics-header.json",
+      "sha256": "e85c2e44c7f0ec08d43e2a88e67bbd85169fe7d2bf93b595f1714ebf7e9eca87",
+      "evidence_id": "ev_2d853f2971a68402fe72ee762816527093a708a5e6dfd9f541d64dc076348291",
+      "operation": "procedure_pseudo_code",
+      "subject_sha256": "9094dc9f1413c4d59ac4b7441f31f2ae9115c9731be8e0eed2a79b1812b17b72",
+      "provider": {
+        "id": "ghidra",
+        "name": "Ghidra",
+        "version": "12.1.4"
+      }
+    }
+  ]
+}
