@@ -1,0 +1,26 @@
+name: Linux build and tests
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install CUPS build and test dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y build-essential libcups2-dev cups cups-filters ghostscript python3 fonts-dejavu-core
+      - name: Build and run unit tests
+        run: make test
+      - name: Validate PPD
+        run: cupstestppd -W all ppd/epson-tm-l90.ppd
+      - name: Run renderer and socket integration tests
+        run: make integration
