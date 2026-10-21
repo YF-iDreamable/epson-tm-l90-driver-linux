@@ -29,7 +29,10 @@ int main(int argc, char **argv) {
     unsigned char *row = calloc(hdr.cupsBytesPerLine, 1);
     if (!row) return 2;
     for (unsigned p = 0; p < pages; ++p) {
-        if (!cupsRasterWriteHeader2(r, &hdr)) return 3;
+        if (!cupsRasterWriteHeader2(r, &hdr)) {
+            fprintf(stderr, "%s\n", cupsRasterErrorString());
+            return 3;
+        }
         for (unsigned y = 0; y < h; ++y) {
             /* All padding deliberately black: driver must clear unused bits. */
             memset(row, space == CUPS_CSPACE_K ? 255 : 0, hdr.cupsBytesPerLine);

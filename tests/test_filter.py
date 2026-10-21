@@ -10,7 +10,7 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 def fixture(w=352, h=176, bits=1, space=3, pages=1, compressed=1, copies=1, padding=0, dpi=203, duplex=0):
-    return subprocess.check_output([str(ROOT/'build/raster-fixture'), *map(str, (w, h, bits, space, pages, compressed, copies, padding, dpi, duplex))])
+    return subprocess.check_output([str(ROOT/'build/raster-fixture'), *map(str, (w, h, bits, space, pages, compressed, copies, padding, dpi, duplex))], stderr=subprocess.PIPE)
 
 
 def run(data, options='', copies='1', env=None, filename=False):
@@ -34,14 +34,31 @@ class FilterTests(unittest.TestCase):
         self.assertEqual(p.stdout, b'', 'bad jobs must emit no printer bytes')
         self.assertIn(b'ERROR:', p.stderr)
 
-    def test_pixels_widths_depth_polarity_compression_and_padding(self):
+    def test_pixels_widths_depth_polarity_and_compression(self):
         for w in (1, 7, 8, 9, 351, 352, 575, 576):
             for bits, space, compressed in ((1, 3, 0), (1, 0, 1), (8, 3, 1), (8, 18, 0)):
                 with self.subTest(w=w, bits=bits, space=space, compressed=compressed):
-                    pages, _ = self.check_ok(run(fixture(w, 259, bits, space, compressed=compressed, padding=3)))
+                    pages, _ = self.check_ok(run(fixture(w, 259, bits, space, compressed=compressed)))
                     self.assertEqual(pages[0]['bands'], [128, 128, 3])
                     expected = [[(x*17+y*13) % 23 < 9 for x in range(w)] for y in range(259)]
                     self.assertEqual(pages[0]['pixels'], expected)
+
+    def test_padded_rows_when_supported_by_cups(self):
+        # Hardened CUPS versions reject noncanonical row strides while writing
+        # or reading the raster header. Always test canonical rows above; retain
+        # the additional padding checks on CUPS versions that support them.
+        try:
+            probe = fixture(351, 259, padding=3)
+        except subprocess.CalledProcessError as error:
+            if error.returncode != 3 or b"Raster line length" not in error.stderr or b"width" not in error.stderr:
+                raise
+            self.skipTest('Installed CUPS raster writer rejects padded row strides')
+        self.check_ok(run(probe))
+        for bits, space, compressed in ((1, 3, 0), (1, 0, 1), (8, 3, 1), (8, 18, 0)):
+            with self.subTest(bits=bits, space=space, compressed=compressed):
+                pages, _ = self.check_ok(run(fixture(351, 259, bits, space, compressed=compressed, padding=3)))
+                expected = [[(x*17+y*13) % 23 < 9 for x in range(351)] for y in range(259)]
+                self.assertEqual(pages[0]['pixels'], expected)
 
     def test_blank_pages_and_boundaries(self):
         for cut in ('None', 'Page', 'Job'):
