@@ -1,0 +1,85 @@
+*PPD-Adobe: "4.3"
+*FormatVersion: "4.3"
+*FileVersion: "0.1.0"
+*LanguageVersion: English
+*LanguageEncoding: ISOLatin1
+*PCFileName: "TML90.PPD"
+*Manufacturer: "Epson"
+*Product: "(TM-L90)"
+*ModelName: "Epson TM-L90 calibrated die-cut"
+*ShortNickName: "TM-L90 die-cut"
+*NickName: "Epson TM-L90 die-cut - CloverHelper 0.1"
+*PSVersion: "(3010.000) 0"
+*LanguageLevel: "3"
+*ColorDevice: False
+*DefaultColorSpace: Gray
+*FileSystem: False
+*Throughput: "1"
+*TTRasterizer: Type42
+*cupsVersion: 2.0
+*cupsManualCopies: True
+*cupsFilter: "application/vnd.cups-raster 0 rastertotml90"
+*cupsModelNumber: 90
+*cupsSNMPSupplies: False
+*cupsIPPSupplies: False
+*LandscapeOrientation: Plus90
+*VariablePaperSize: True
+*HWMargins: 8.503937 4.251969 8.503937 4.251969
+*MaxMediaWidth: "221.102362"
+*MaxMediaHeight: "850.393701"
+*CustomPageSize True: "pop pop pop <</PageSize [5 -2 roll] /ImagingBBox null>>setpagedevice"
+*ParamCustomPageSize Width: 1 points 107.716535 221.102362
+*ParamCustomPageSize Height: 2 points 42.519685 850.393701
+*ParamCustomPageSize WidthOffset: 3 points 0 0
+*ParamCustomPageSize HeightOffset: 4 points 0 0
+*ParamCustomPageSize Orientation: 5 int 0 0
+*OpenUI *PageSize/Label Size: PickOne
+*OrderDependency: 10 AnySetup *PageSize
+*DefaultPageSize: 25x50mmRotated
+*PageSize 25x50mmRotated/50 x 25 mm: "<</PageSize [141.732283 70.866142] /ImagingBBox null>>setpagedevice"
+*PageSize 1x2Rotated/50.8 x 25.4 mm: "<</PageSize [144.000000 72.000000] /ImagingBBox null>>setpagedevice"
+*PageSize 40x58mmRotated/58 x 40 mm: "<</PageSize [164.409449 113.385827] /ImagingBBox null>>setpagedevice"
+*PageSize 50x70mmRotated/70 x 50 mm: "<</PageSize [198.425197 141.732283] /ImagingBBox null>>setpagedevice"
+*CloseUI: *PageSize
+*OpenUI *PageRegion/Label Size: PickOne
+*OrderDependency: 10 AnySetup *PageRegion
+*DefaultPageRegion: 25x50mmRotated
+*PageRegion 25x50mmRotated/50 x 25 mm: "<</PageSize [141.732283 70.866142] /ImagingBBox null>>setpagedevice"
+*PageRegion 1x2Rotated/50.8 x 25.4 mm: "<</PageSize [144.000000 72.000000] /ImagingBBox null>>setpagedevice"
+*PageRegion 40x58mmRotated/58 x 40 mm: "<</PageSize [164.409449 113.385827] /ImagingBBox null>>setpagedevice"
+*PageRegion 50x70mmRotated/70 x 50 mm: "<</PageSize [198.425197 141.732283] /ImagingBBox null>>setpagedevice"
+*CloseUI: *PageRegion
+*DefaultImageableArea: 25x50mmRotated
+*DefaultPaperDimension: 25x50mmRotated
+*ImageableArea 25x50mmRotated: "8.503937 4.251969 133.228346 66.614173"
+*PaperDimension 25x50mmRotated: "141.732283 70.866142"
+*ImageableArea 1x2Rotated: "8.503937 4.251969 135.496063 67.748031"
+*PaperDimension 1x2Rotated: "144.000000 72.000000"
+*ImageableArea 40x58mmRotated: "8.503937 4.251969 155.905512 109.133858"
+*PaperDimension 40x58mmRotated: "164.409449 113.385827"
+*ImageableArea 50x70mmRotated: "8.503937 4.251969 189.921260 137.480315"
+*PaperDimension 50x70mmRotated: "198.425197 141.732283"
+*OpenUI *Resolution/Resolution: PickOne
+*OrderDependency: 20 AnySetup *Resolution
+*DefaultResolution: 203dpi
+*Resolution 203dpi/203 dpi: "<</HWResolution [203 203]>>setpagedevice"
+*CloseUI: *Resolution
+*OpenUI *ColorModel/Color Mode: PickOne
+*OrderDependency: 30 AnySetup *ColorModel
+*DefaultColorModel: Gray
+*ColorModel Gray/Monochrome: "<</cupsColorSpace 3 /cupsColorOrder 0 /cupsBitsPerColor 1>>setpagedevice"
+*CloseUI: *ColorModel
+*OpenUI *MediaType/Loaded Media: PickOne
+*OrderDependency: 40 AnySetup *MediaType
+*DefaultMediaType: DieCut
+*MediaType DieCut/Calibrated die-cut labels: "<</MediaType (DieCut)>>setpagedevice"
+*CloseUI: *MediaType
+*OpenUI *TML90Cut/Cutting: PickOne
+*OrderDependency: 50 AnySetup *TML90Cut
+*DefaultTML90Cut: None
+*TML90Cut None/No cut - advance to next label: ""
+*TML90Cut Page/Cut after each label: ""
+*TML90Cut Job/Cut after job: ""
+*CloseUI: *TML90Cut
+*DefaultFont: Courier
+*Font Courier: Standard "(001.007)" Standard ROM
